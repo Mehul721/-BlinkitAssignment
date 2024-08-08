@@ -33,6 +33,3 @@ struct CategoryListView: View {
 }
 
 
-#Preview {
-    CategoryListView(selectedCategory: <#T##Binding<String>#>)
-}

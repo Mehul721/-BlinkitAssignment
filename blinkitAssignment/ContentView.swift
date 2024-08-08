@@ -16,23 +16,23 @@ struct ContentView: View {
             // Category List
             CategoryListView(selectedCategory: $selectedCategory)
                 .frame(width: UIScreen.main.bounds.width * 0.15)
-                .background(Color(.systemGray6)) // Optional background color
+                .background(Color(.systemGray6))
             
             // Product Grid
             ProductGridView(selectedCategory: selectedCategory)
                 .frame(width: UIScreen.main.bounds.width * 0.85)
                 .refreshable {
-                    pullToRefresh()
+                    pullDown()
                 }
         }
         .edgesIgnoringSafeArea(.all)
     }
 
-    private func pullToRefresh() {
-        print("Pull to refresh called")
-        // Find the index of the selected category
-        if let currentIndex = categories.firstIndex(of: selectedCategory), currentIndex > 0 {
-            selectedCategory = categories[currentIndex - 1]
+    private func pullDown() {
+        print("Pull Down called")
+        // Moving to the next category
+        if let currentIndex = categories.firstIndex(of: selectedCategory), currentIndex < categories.count - 1 {
+            selectedCategory = categories[currentIndex + 1]
         }
     }
 
@@ -40,6 +40,7 @@ struct ContentView: View {
         return ["Item 1", "Asian Sauces", "Jam & Spreads", "Mayonnaise", "Peanut Butter", "Chyawanprash & Honey", "Chutney & Pickle", "Salad Dressings", "Dips"]
     }
 }
+
 
 
 #Preview {
