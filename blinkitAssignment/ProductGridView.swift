@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProductGridView: View {
-    let selectedCategory: String
+    @Binding var selectedCategory: String
+    @Binding var isLastItemVisible: Bool
     
     var products: [Product] {
         switch selectedCategory {
@@ -23,6 +24,12 @@ struct ProductGridView: View {
             ]
         case "Asian Sauces":
             return [
+                Product(name: "Asian Sauce 1", price: "₹120", weight: "500 g", imageUrl: "https://picsum.photos/200/300?random=7"),
+                Product(name: "Asian Sauce 2", price: "₹180", weight: "600 g", imageUrl: "https://picsum.photos/200/300?random=8"),
+                Product(name: "Asian Sauce 3", price: "₹140", weight: "750 g", imageUrl: "https://picsum.photos/200/300?random=9"),
+                Product(name: "Asian Sauce 4", price: "₹220", weight: "1 kg", imageUrl: "https://picsum.photos/200/300?random=10"),
+                Product(name: "Asian Sauce 5", price: "₹110", weight: "400 g", imageUrl: "https://picsum.photos/200/300?random=11"),
+                Product(name: "Asian Sauce 6", price: "₹130", weight: "350 g", imageUrl: "https://picsum.photos/200/300?random=12"),
                 Product(name: "Asian Sauce 1", price: "₹120", weight: "500 g", imageUrl: "https://picsum.photos/200/300?random=7"),
                 Product(name: "Asian Sauce 2", price: "₹180", weight: "600 g", imageUrl: "https://picsum.photos/200/300?random=8"),
                 Product(name: "Asian Sauce 3", price: "₹140", weight: "750 g", imageUrl: "https://picsum.photos/200/300?random=9"),
@@ -106,12 +113,27 @@ struct ProductGridView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(products) { product in
+                ForEach(products.indices, id: \.self) { index in
+                    let product = products[index]
                     ProductItemView(product: product)
+                        .onAppear {
+                            // Set isLastItemVisible to true only if the last item becomes visible
+                            if index == products.count - 1 {
+                                isLastItemVisible = true
+                            }
+                        }
+                        .onDisappear {
+                            // Set isLastItemVisible to false only if the last item disappears
+                            if index == products.count - 1 {
+                                isLastItemVisible = false
+                            }
+                        }
                 }
             }
-            .padding()
+            
         }
     }
+
 }
+
 

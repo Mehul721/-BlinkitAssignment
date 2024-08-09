@@ -9,12 +9,6 @@ import SwiftUI
 
 struct CategoryListView: View {
     let categories = ["Item 1", "Asian Sauces", "Jam & Spreads", "Mayonnaise", "Peanut Butter", "Chyawanprash & Honey", "Chutney & Pickle", "Salad Dressings", "Dips"]
-    
-    let categoryImages: [String: String] = [
-        "Item 1": "https://picsum.photos/0/1/500/800",
-        
-    ]
-    
     @Binding var selectedCategory: String
     
     var body: some View {
@@ -24,27 +18,28 @@ struct CategoryListView: View {
                     Button(action: {
                         selectedCategory = category
                     }) {
-                        HStack {
-                            if let imageUrl = categoryImages[category], let url = URL(string: imageUrl) {
-                                AsyncImage(url: url) { image in
-                                    image
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 30, height: 30)  // Adjust size as needed
-                                        .cornerRadius(5)
-                                } placeholder: {
-                                    Rectangle()
-                                        .fill(Color.gray.opacity(0.3))
-                                        .frame(width: 30, height: 30)
-                                        .cornerRadius(5)
-                                }
+                        VStack {
+                            ZStack {
+                                Circle()
+                                    .fill(Color.gray) // Background color of the circular container
+                                    .frame(width: 40, height: 40) // Set the size of the circle
+
+                                Image(systemName: "star.fill") // Replace with your desired image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: selectedCategory == category ? 30 : 24, height: selectedCategory == category ? 30 : 24) // Size of the image
+                                    .foregroundColor(.white) // Image color
+                                    .animation(.easeInOut(duration: 0.3), value: selectedCategory == category) // Animation when the category is selected
                             }
                             Text(category)
-                                .font(.system(size: 14))
+                                .font(.system(size: 10))
                                 .fontWeight(selectedCategory == category ? .bold : .regular)
                                 .foregroundColor(.primary)
-                                .padding(.leading, 10)
+                                .padding(.leading, 8)
+                                .padding(.trailing, 8)
+                                .multilineTextAlignment(.center)
                         }
+
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
@@ -53,5 +48,3 @@ struct CategoryListView: View {
         }
     }
 }
-
-
