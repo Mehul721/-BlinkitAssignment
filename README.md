@@ -1,7 +1,7 @@
 ### README
 
 #### Introduction
-This SwiftUI application is a simple e-commerce app that displays a list of categories and products. Users can navigate through categories, view product details, and see product discounts. The app uses SwiftUI's `@State` and `@Binding` properties to manage state and handle user interactions.
+This SwiftUI application is a simple Blinkit UI app that displays a list of categories and products. Users can navigate through categories, view product details, and see product discounts. The app uses SwiftUI's `@State` and `@Binding` properties to manage state and handle user interactions.
 
 ### How to Run the Application
 To run the application, open the project in Xcode and select a target device or simulator. Then, simply press the `Run` button (or `Cmd + R`) to build and launch the app.
