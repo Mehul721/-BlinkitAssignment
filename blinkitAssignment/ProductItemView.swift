@@ -6,28 +6,23 @@
 //
 import SwiftUI
 
-struct Product: Identifiable {
-    let id = UUID()
+struct ProductItemView: View {
     let name: String
     let price: String
     let weight: String
     let imageUrl: String
     let discount: Int
-}
-
-struct ProductItemView: View {
-    let product: Product
     
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
                 Color.purple.opacity(0.05)
                 
-                AsyncImage(url: URL(string: product.imageUrl)) { image in
+                AsyncImage(url: URL(string: imageUrl)) { image in
                     image
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: 120, maxHeight:100)
+                        .frame(maxWidth: 120, maxHeight: 100)
                         .cornerRadius(10)
                 } placeholder: {
                     Rectangle()
@@ -38,22 +33,22 @@ struct ProductItemView: View {
             .frame(height: 120)
             .cornerRadius(10)
             
-            Text(product.name)
+            Text(name)
                 .font(.headline)
                 .lineLimit(2)
             
-            Text(product.weight)
+            Text(weight)
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text(product.price)
+                    Text(price)
                         .font(.headline)
                     
-                    if product.discount > 0 {
-                        Text("\(product.discount)% OFF")
-                            .font(.caption2)
+                    if discount > 0 {
+                        Text("\(discount)% OFF")
+                            .font(.subheadline)
                             .fontWeight(.bold)
                             .foregroundColor(.blue)
                     }
@@ -62,7 +57,6 @@ struct ProductItemView: View {
                 Spacer()
                 
                 Button(action: {
-                    // Add to cart action
                 }) {
                     Text("ADD")
                         .font(.caption)
@@ -83,9 +77,6 @@ struct ProductItemView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
 
 
 

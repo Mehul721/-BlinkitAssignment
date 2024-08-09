@@ -14,6 +14,7 @@
 		754F36CB2C652689000EC8DA /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754F36CA2C652689000EC8DA /* CategoryListView.swift */; };
 		754F36CD2C652D46000EC8DA /* ProductGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754F36CC2C652D46000EC8DA /* ProductGridView.swift */; };
 		754F36CF2C652DF0000EC8DA /* ProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754F36CE2C652DF0000EC8DA /* ProductItemView.swift */; };
+		754F36D12C662DB5000EC8DA /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754F36D02C662DB5000EC8DA /* ProductDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		754F36CA2C652689000EC8DA /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		754F36CC2C652D46000EC8DA /* ProductGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridView.swift; sourceTree = "<group>"; };
 		754F36CE2C652DF0000EC8DA /* ProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemView.swift; sourceTree = "<group>"; };
+		754F36D02C662DB5000EC8DA /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				754F36CA2C652689000EC8DA /* CategoryListView.swift */,
 				754F36CC2C652D46000EC8DA /* ProductGridView.swift */,
 				754F36CE2C652DF0000EC8DA /* ProductItemView.swift */,
+				754F36D02C662DB5000EC8DA /* ProductDetails.swift */,
 			);
 			path = blinkitAssignment;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				754F36CB2C652689000EC8DA /* CategoryListView.swift in Sources */,
 				754F36B72C64EE50000EC8DA /* ContentView.swift in Sources */,
 				754F36CD2C652D46000EC8DA /* ProductGridView.swift in Sources */,
+				754F36D12C662DB5000EC8DA /* ProductDetails.swift in Sources */,
 				754F36B52C64EE50000EC8DA /* blinkitAssignmentApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

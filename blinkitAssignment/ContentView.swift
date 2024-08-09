@@ -16,12 +16,12 @@ struct ContentView: View {
     var body: some View {
         HStack(spacing: 0) {
             
-            // Category List
+            //categorylistview
             CategoryListView(selectedCategory: $selectedCategory)
                 .frame(width: UIScreen.main.bounds.width * 0.15)
                 .background(Color(.systemGray6))
             
-            // Product Grid
+            //productgridview
             ProductGridView(selectedCategory: $selectedCategory, isLastItemVisible: $isLastItemVisible)
                 .frame(width: UIScreen.main.bounds.width * 0.85)
                 .refreshable {
@@ -66,8 +66,3 @@ struct ContentView: View {
     }
 }
 
-
-
-#Preview {
-    ContentView()
-}
