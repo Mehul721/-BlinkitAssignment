@@ -13,7 +13,6 @@ struct Product: Identifiable {
     let weight: String
     let imageUrl: String
 }
-
 struct ProductItemView: View {
     let product: Product
     
@@ -23,12 +22,18 @@ struct ProductItemView: View {
                 image
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 120)
+                    .frame(height: 150)
                     .cornerRadius(10)
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.horizontal,40) 
             } placeholder: {
                 Rectangle()
                     .fill(Color.gray.opacity(0.3))
-                    .frame(height: 120)
+                    .frame(height: 150)
+                    .overlay(
+                        ProgressView()
+                            .scaleEffect(0.5)
+                    )
             }
             
             Text(product.name)
@@ -46,22 +51,24 @@ struct ProductItemView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    // Action for the ADD button
                 }) {
                     Text("ADD")
                         .font(.caption)
-                        .foregroundColor(.white)
-                        .padding(.vertical, 4)
+                        .foregroundColor(.brandPrimary)
+                        .padding(.vertical, 6)
                         .padding(.horizontal, 10)
-                        .background(Color.green)
+                        .background(Color.white)
                         .cornerRadius(5)
+                        .overlay(RoundedRectangle(cornerRadius: 5)
+                            .stroke(Color.green))
                 }
             }
         }
         .padding()
-        .background(Color.white)
+        .background(Color.gray.opacity(0.1))
+        .saturation(0.2)
         .cornerRadius(10)
         .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 0, y: 2)
     }
 }
-
