@@ -21,15 +21,15 @@ struct CategoryListView: View {
                         VStack {
                             ZStack {
                                 Circle()
-                                    .fill(Color.gray) // Background color of the circular container
-                                    .frame(width: 40, height: 40) // Set the size of the circle
+                                    .fill(Color.gray)
+                                    .frame(width: 40, height: 40)
 
-                                Image(systemName: "star.fill") // Replace with your desired image
+                                Image(systemName: "carrot.fill")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: selectedCategory == category ? 30 : 24, height: selectedCategory == category ? 30 : 24) // Size of the image
-                                    .foregroundColor(.white) // Image color
-                                    .animation(.easeInOut(duration: 0.3), value: selectedCategory == category) // Animation when the category is selected
+                                    .frame(width: selectedCategory == category ? 30 : 24, height: selectedCategory == category ? 30 : 24)
+                                    .foregroundColor(.white)
+                                    .animation(.easeInOut(duration: 0.3), value: selectedCategory == category)
                             }
                             Text(category)
                                 .font(.system(size: 10))

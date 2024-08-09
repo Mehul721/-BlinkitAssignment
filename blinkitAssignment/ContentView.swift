@@ -15,10 +15,11 @@ struct ContentView: View {
 
     var body: some View {
         HStack(spacing: 0) {
+            
             // Category List
             CategoryListView(selectedCategory: $selectedCategory)
                 .frame(width: UIScreen.main.bounds.width * 0.15)
-                .background(Color(.systemGray6)) // Optional background color
+                .background(Color(.systemGray6))
             
             // Product Grid
             ProductGridView(selectedCategory: $selectedCategory, isLastItemVisible: $isLastItemVisible)
@@ -30,13 +31,14 @@ struct ContentView: View {
                     DragGesture()
                         .onChanged { value in
                             dragOffset = value.translation
-                            print("Drag Offset: \(dragOffset.height) \(isLastItemVisible)") // Debugging print statement
-                            if dragOffset.height < -12 && isLastItemVisible { // Adjust the threshold as needed
+                            print("Drag Offset: \(dragOffset.height) \(isLastItemVisible)")
+                            
+                            if dragOffset.height < -12 && isLastItemVisible {
                                 pullUpToRefresh()
                             }
                         }
                         .onEnded { _ in
-                            dragOffset = .zero // Reset the drag offset after gesture ends
+                            dragOffset = .zero
                         }
                 )
         }
@@ -45,7 +47,7 @@ struct ContentView: View {
 
     private func pullToRefresh() {
         print("Pull to refresh called")
-        // Find the index of the selected category
+
         if let currentIndex = categories.firstIndex(of: selectedCategory), currentIndex > 0 {
             selectedCategory = categories[currentIndex - 1]
         }
@@ -53,7 +55,7 @@ struct ContentView: View {
     
     private func pullUpToRefresh() {
         print("Pull up to refresh called")
-        // Find the index of the selected category
+
         if let currentIndex = categories.firstIndex(of: selectedCategory), currentIndex < categories.count - 1 {
             selectedCategory = categories[currentIndex + 1]
         }
