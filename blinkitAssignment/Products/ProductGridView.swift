@@ -21,7 +21,7 @@ struct ProductGridView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
+            LazyVGrid(columns: columns, spacing: 2) {
                 ForEach(products.indices, id: \.self) { index in
                     let product = products[index]
                     ProductItemView(name: product.name, price: product.price, weight: product.weight, imageUrl: product.imageUrl, discount: product.discount)

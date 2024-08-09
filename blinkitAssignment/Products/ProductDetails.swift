@@ -16,14 +16,14 @@ struct Product {
 }
 func generateProducts(for category: String) -> [Product] {
     switch category {
-    case "Item 1":
+    case "Fruits":
         return [
-            Product(name: "Item 1 Product 1", price: "₹100", weight: "850 g", imageUrl: "https://picsum.photos/200/300?random=1", discount: 10),
-            Product(name: "Item 1 Product 2", price: "₹150", weight: "1.1 kg", imageUrl: "https://picsum.photos/200/300?random=2", discount: 15),
-            Product(name: "Item 1 Product 3", price: "₹72", weight: "190 g", imageUrl: "https://picsum.photos/200/300?random=3", discount: 12),
-            Product(name: "Item 1 Product 4", price: "₹160", weight: "1 kg", imageUrl: "https://picsum.photos/200/300?random=4", discount: 15),
-            Product(name: "Item 1 Product 5", price: "₹100", weight: "900 g", imageUrl: "https://picsum.photos/200/300?random=5", discount: 20),
-            Product(name: "Item 1 Product 6", price: "₹160", weight: "900 g", imageUrl: "https://picsum.photos/200/300?random=6", discount: 25)
+            Product(name: "Fruits Product 1", price: "₹100", weight: "850 g", imageUrl: "https://picsum.photos/200/300?random=1", discount: 10),
+            Product(name: "Fruits Product 2", price: "₹150", weight: "1.1 kg", imageUrl: "https://picsum.photos/200/300?random=2", discount: 15),
+            Product(name: "Fruits Product 3", price: "₹72", weight: "190 g", imageUrl: "https://picsum.photos/200/300?random=3", discount: 12),
+            Product(name: "Fruits Product 4", price: "₹160", weight: "1 kg", imageUrl: "https://picsum.photos/200/300?random=4", discount: 15),
+            Product(name: "Fruits Product 5", price: "₹100", weight: "900 g", imageUrl: "https://picsum.photos/200/300?random=5", discount: 20),
+            Product(name: "Fruits Product 6", price: "₹160", weight: "900 g", imageUrl: "https://picsum.photos/200/300?random=6", discount: 25)
         ]
     case "Asian Sauces":
         return [
@@ -61,16 +61,16 @@ func generateProducts(for category: String) -> [Product] {
             Product(name: "Peanut Butter Product 5", price: "₹140", weight: "350 g", imageUrl: "https://picsum.photos/200/300?random=29", discount: 10),
             Product(name: "Peanut Butter Product 6", price: "₹190", weight: "600 g", imageUrl: "https://picsum.photos/200/300?random=30", discount: 16)
         ]
-    case "Chyawanprash & Honey":
+    case "Honey":
         return [
-            Product(name: "Chyawanprash Product 1", price: "₹210", weight: "1 kg", imageUrl: "https://picsum.photos/200/300?random=31", discount: 20),
-            Product(name: "Chyawanprash Product 2", price: "₹190", weight: "900 g", imageUrl: "https://picsum.photos/200/300?random=32", discount: 13),
-            Product(name: "Chyawanprash Product 3", price: "₹220", weight: "1.1 kg", imageUrl: "https://picsum.photos/200/300?random=33", discount: 10),
-            Product(name: "Chyawanprash Product 4", price: "₹200", weight: "950 g", imageUrl: "https://picsum.photos/200/300?random=34", discount: 16),
-            Product(name: "Chyawanprash Product 5", price: "₹180", weight: "800 g", imageUrl: "https://picsum.photos/200/300?random=35", discount: 16),
-            Product(name: "Chyawanprash Product 6", price: "₹230", weight: "1.2 kg", imageUrl: "https://picsum.photos/200/300?random=36", discount: 13)
+            Product(name: "Honey Product 1", price: "₹210", weight: "1 kg", imageUrl: "https://picsum.photos/200/300?random=31", discount: 20),
+            Product(name: "Honey Product 2", price: "₹190", weight: "900 g", imageUrl: "https://picsum.photos/200/300?random=32", discount: 13),
+            Product(name: "Honey Product 3", price: "₹220", weight: "1.1 kg", imageUrl: "https://picsum.photos/200/300?random=33", discount: 10),
+            Product(name: "Honey Product 4", price: "₹200", weight: "950 g", imageUrl: "https://picsum.photos/200/300?random=34", discount: 16),
+            Product(name: "Honey Product 5", price: "₹180", weight: "800 g", imageUrl: "https://picsum.photos/200/300?random=35", discount: 16),
+            Product(name: "Honey Product 6", price: "₹230", weight: "1.2 kg", imageUrl: "https://picsum.photos/200/300?random=36", discount: 13)
         ]
-    case "Chutney & Pickle":
+    case "Chutney":
         return [
             Product(name: "Chutney Product 1", price: "₹100", weight: "250 g", imageUrl: "https://picsum.photos/200/300?random=37", discount: 10),
             Product(name: "Chutney Product 2", price: "₹120", weight: "300 g", imageUrl: "https://picsum.photos/200/300?random=38", discount: 13),
@@ -79,7 +79,7 @@ func generateProducts(for category: String) -> [Product] {
             Product(name: "Chutney Product 5", price: "₹180", weight: "800 g", imageUrl: "https://picsum.photos/200/300?random=35", discount: 16),
             Product(name: "Chutney Product 6", price: "₹230", weight: "1.2 kg", imageUrl: "https://picsum.photos/200/300?random=36", discount: 13)
             ]
-    case "Salad Dressings":
+    case "Salad Dressing":
             return [
                 Product(name: "Salad Dressing Product 1", price: "₹130", weight: "250 g", imageUrl: "https://picsum.photos/200/300?random=43", discount: 19),
                 Product(name: "Salad Dressing Product 2", price: "₹150", weight: "300 g", imageUrl: "https://picsum.photos/200/300?random=44", discount: 10),

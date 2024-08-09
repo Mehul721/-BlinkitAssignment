@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedCategory: String = "Item 1"
+    @State private var selectedCategory: String = "Fruits"
     @State private var pullToRefreshTriggered = false
     @State private var dragOffset = CGSize.zero
     @State private var isLastItemVisible = false
@@ -62,7 +62,7 @@ struct ContentView: View {
     }
 
     private var categories: [String] {
-        return ["Item 1", "Asian Sauces", "Jam & Spreads", "Mayonnaise", "Peanut Butter", "Chyawanprash & Honey", "Chutney & Pickle", "Salad Dressings", "Dips"]
+        return ["Fruits", "Asian Sauces", "Jam & Spreads", "Mayonnaise", "Peanut Butter", " Honey", "Chutney", "Salad Dressing", "Dips"]
     }
 }
 

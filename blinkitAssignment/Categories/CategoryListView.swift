@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryListView: View {
-    let categories = ["Item 1", "Asian Sauces", "Jam & Spreads", "Mayonnaise", "Peanut Butter", "Chyawanprash & Honey", "Chutney & Pickle", "Salad Dressings", "Dips"]
+    let categories = ["Fruits", "Asian Sauces", "Jam & Spreads", "Mayonnaise", "Peanut Butter", "Honey", "Chutney", "Salad Dressing", "Dips"]
     @Binding var selectedCategory: String
     
     var body: some View {
